@@ -1,0 +1,6 @@
+SEMITRANSPARENT THEME BASE ON TWENTY ELEVEN
+= TWENTY ELEVEN =
+
+* by the WordPress team, http://wordpress.org/
+
+== ABOUT TWENTY ELEVEN ==
