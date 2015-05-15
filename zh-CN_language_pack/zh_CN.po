@@ -1,0 +1,726 @@
+# Copyright (C) 2012 the WordPress team
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Twenty Eleven 2.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyeleven\n"
+"POT-Creation-Date: 2014-12-18 16:59:47+00:00\n"
+"PO-Revision-Date: 2014-12-30 22:43+0100\n"
+"Last-Translator: Haoxian Zeng <haoxian.zeng@gmail.com>\n"
+"Language-Team: http://cnzhx.net <admin@cnzhx.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: 404.php:17
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "噢哦，不好意思，出错了。"
+
+#: 404.php:21
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching, or one of the links below, can help."
+msgstr ""
+"看来我们找不到您要访问的内容。您可以搜索一下相关关键词，或者尝试下面的链接。"
+
+#: 404.php:28
+msgid "Most Used Categories"
+msgstr "常用分类"
+
+#. translators: %1$s: smilie
+#: 404.php:36
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "尝试查看月度归档。 %1$s"
+
+#: archive.php:25
+msgid "Daily Archives: %s"
+msgstr "按天归档：%s"
+
+#: archive.php:27
+msgid "Monthly Archives: %s"
+msgstr "月度归档：%s"
+
+#: archive.php:27
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:29
+msgid "Yearly Archives: %s"
+msgstr "年度归档：%s"
+
+#: archive.php:29
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:31
+msgid "Blog Archives"
+msgstr "博客归档"
+
+#: archive.php:57 author.php:86 category.php:59 index.php:37 search.php:44
+#: tag.php:60
+msgid "Nothing Found"
+msgstr "没有找到相应内容"
+
+#: archive.php:61 author.php:90 category.php:63 index.php:41 tag.php:64
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr "对不起，没有找到指定的文章归档。您可以通过搜索来查找相关的文章。"
+
+#: author.php:29
+msgid "Author Archives: %s"
+msgstr "作者： %s"
+
+#: author.php:60 content-single.php:63
+msgid "About %s"
+msgstr "关于 %s"
+
+#: category.php:19
+msgid "Category Archives: %s"
+msgstr "文章分类：%s"
+
+#: comments.php:17
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr "该文设置了密码。请输入密码查看内容。"
+
+#: comments.php:34
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 条关于 &ldquo;%2$s&rdquo; 的评论"
+msgstr[1] "%1$s 条关于 &ldquo;%2$s&rdquo; 的评论"
+
+#: comments.php:41 comments.php:62
+msgid "Comment navigation"
+msgstr "评论导航"
+
+#: comments.php:42 comments.php:63
+msgid "&larr; Older Comments"
+msgstr "&larr; 较早评论"
+
+#: comments.php:43 comments.php:64
+msgid "Newer Comments &rarr;"
+msgstr "较新评论 &rarr;"
+
+#: comments.php:74
+msgid "Comments are closed."
+msgstr "已关闭评论。"
+
+#: content-aside.php:19
+msgid "Aside"
+msgstr "微博"
+
+#: content-aside.php:24 content-image.php:23 content-link.php:24
+#: content-quote.php:24 content-status.php:24 content.php:30
+msgid "Reply"
+msgstr "回复"
+
+#: content-aside.php:24 content-image.php:23 content-link.php:24
+#: content-quote.php:24 content-status.php:24 content.php:30
+msgctxt "comments number"
+msgid "1"
+msgstr ""
+
+#: content-aside.php:24 content-image.php:23 content-link.php:24
+#: content-quote.php:24 content-status.php:24 content.php:30
+msgctxt "comments number"
+msgid "%"
+msgstr ""
+
+#: content-aside.php:35 content-gallery.php:34 content-image.php:29
+#: content-link.php:35 content-quote.php:35 content-status.php:48
+#: content.php:41 functions.php:375
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "继续阅读全文 <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-aside.php:36 content-featured.php:23 content-gallery.php:52
+#: content-image.php:30 content-intro.php:18 content-link.php:36
+#: content-page.php:18 content-quote.php:36 content-single.php:24
+#: content-status.php:49 content.php:42 image.php:98
+msgid "Pages:"
+msgstr "分页："
+
+#: content-aside.php:44 content-gallery.php:85 content-image.php:66
+#: content-link.php:44 content-quote.php:69 content-status.php:57
+#: content.php:79 showcase.php:202
+msgid "Leave a reply"
+msgstr "我要评论"
+
+#: content-aside.php:44 content-gallery.php:85 content-image.php:66
+#: content-link.php:44 content-quote.php:69 content-status.php:57
+#: content.php:79 showcase.php:202
+msgid "<b>1</b> Reply"
+msgstr "<b>1</b> 条评论"
+
+#: content-aside.php:44 content-gallery.php:85 content-image.php:66
+#: content-link.php:44 content-quote.php:69 content-status.php:57
+#: content.php:79 showcase.php:202
+msgid "<b>%</b> Replies"
+msgstr "<b>%</b> 条评论"
+
+#: content-aside.php:46 content-featured.php:45 content-gallery.php:88
+#: content-image.php:70 content-intro.php:19 content-link.php:46
+#: content-page.php:21 content-quote.php:72 content-single.php:52
+#: content-status.php:59 content.php:82 functions.php:609 functions.php:637
+#: image.php:41
+msgid "Edit"
+msgstr "编辑"
+
+#. translators: used between list items, there is a space after the comma
+#: content-featured.php:29 content-featured.php:38 content-gallery.php:60
+#: content-gallery.php:70 content-image.php:49 content-image.php:58
+#: content-quote.php:44 content-quote.php:54 content-single.php:30
+#: content-single.php:33 content.php:51 content.php:63
+msgid ", "
+msgstr ""
+
+#: content-featured.php:31
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"分类 %1$s | 标签 %2$s | 收藏 <a href=\"%3$s\" title=\"Permalink to %4$s 的固"
+"定链接\" rel=\"bookmark\">固定链接</a>"
+
+#: content-featured.php:33
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"分类 %1$s | 收藏 <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">固定链接</a>"
+
+#: content-gallery.php:19
+msgid "Gallery"
+msgstr "图集"
+
+#: content-gallery.php:45
+msgid "This gallery contains <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] "该图集共有 <a %1$s>%2$s 张照片</a>。"
+msgstr[1] "该图集共有 <a %1$s>%2$s 张照片</a>。"
+
+#: content-gallery.php:46 showcase.php:121
+msgid "Permalink to %s"
+msgstr "固定链接：%s"
+
+#: content-gallery.php:64 content-image.php:53 content-quote.php:48
+#: content.php:55
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">分类</span> %2$s"
+
+#: content-gallery.php:76 content-image.php:61 content-quote.php:60
+#: content.php:69
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">标签</span> %2$s"
+
+#: content-image.php:18
+msgid "Image"
+msgstr "图片"
+
+#: content-image.php:36
+msgid ""
+"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
+"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s"
+"\" rel=\"author\">%6$s</a></span></span>"
+msgstr ""
+"<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
+"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> 作者 </"
+"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title="
+"\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+
+#: content-image.php:41 functions.php:675
+msgid "View all posts by %s"
+msgstr "查看 %s 的所有文章"
+
+#: content-link.php:19
+msgid "Link"
+msgstr "链接"
+
+#: content-quote.php:15
+msgid "Quote"
+msgstr "引用"
+
+#: content-single.php:35
+msgid ""
+"This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>. "
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"分类 %1$s | 标签 %2$s | 作者 <a href=\"%6$s\">%5$s</a> | 收藏 <a href=\"%3$s"
+"\" title=\"Permalink to %4$s\" rel=\"bookmark\">固定链接</a>"
+
+#: content-single.php:37
+msgid ""
+"This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
+"href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"分类 %1$s | 作者 <a href=\"%6$s\">%5$s</a> | 收藏 <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">固定链接</a>"
+
+#: content-single.php:39
+msgid ""
+"This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
+"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"作者 <a href=\"%6$s\">%5$s</a> | 收藏 <a href=\"%3$s\" title=\"Permalink to "
+"%4$s\" rel=\"bookmark\">固定链接</a>"
+
+#: content-single.php:67
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "查看 %s  的所有文章 <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-status.php:19
+msgid "Status"
+msgstr "状态"
+
+#: content.php:16
+msgid "Featured"
+msgstr "特色"
+
+#. #-#-#-#-#  twentyeleven.pot (Twenty Eleven 2.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+#: footer.php:28
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:28
+msgid "Semantic Personal Publishing Platform"
+msgstr "优雅的个人发布平台"
+
+#: footer.php:28
+msgid "Proudly powered by %s"
+msgstr ""
+"%s</a>  |  <a href=\"http://cnzhx.net/\" title=\"中文翻译：水景一页\">中文</"
+"a> <a href=\"http://wordpress.org/extend/themes/twentyeleven\">2011 主题"
+
+#: functions.php:95
+msgid "Primary Menu"
+msgstr "主菜单"
+
+#. translators: header image description
+#: functions.php:184
+msgid "Wheel"
+msgstr "轮子"
+
+#. translators: header image description
+#: functions.php:190
+msgid "Shore"
+msgstr "海滩"
+
+#. translators: header image description
+#: functions.php:196
+msgid "Trolley"
+msgstr "电车"
+
+#. translators: header image description
+#: functions.php:202
+msgid "Pine Cone"
+msgstr "松塔"
+
+#. translators: header image description
+#: functions.php:208
+msgid "Chessboard"
+msgstr "棋盘"
+
+#. translators: header image description
+#: functions.php:214
+msgid "Lanterns"
+msgstr "灯笼"
+
+#. translators: header image description
+#: functions.php:220
+msgid "Willow"
+msgstr "杨柳"
+
+#. translators: header image description
+#: functions.php:226
+msgid "Hanoi Plant"
+msgstr "河内"
+
+#: functions.php:446
+msgid "Main Sidebar"
+msgstr "主边栏"
+
+#: functions.php:455
+msgid "Showcase Sidebar"
+msgstr "展窗边栏"
+
+#: functions.php:457
+msgid "The sidebar for the optional Showcase Template"
+msgstr "用于可选的展窗模板的边栏"
+
+#: functions.php:465
+msgid "Footer Area One"
+msgstr "页脚边栏 1"
+
+#: functions.php:467 functions.php:477 functions.php:487
+msgid "An optional widget area for your site footer"
+msgstr "网站页脚的边栏，可选"
+
+#: functions.php:475
+msgid "Footer Area Two"
+msgstr "页脚边栏 2"
+
+#: functions.php:485
+msgid "Footer Area Three"
+msgstr "页脚边栏 3"
+
+#: functions.php:509 single.php:18
+msgid "Post navigation"
+msgstr "文章导航"
+
+#: functions.php:510
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 较早文章"
+
+#: functions.php:511
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "较新文章 <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:609
+msgid "Pingback:"
+msgstr "引用通告："
+
+#. translators: 1: comment author, 2: date and time
+#: functions.php:626
+msgid "%1$s on %2$s <span class=\"says\">said:</span>"
+msgstr "%1$s 于 %2$s <span class=\"says\">留言：</span>"
+
+#. translators: 1: date, 2: time
+#: functions.php:632
+msgid "%1$s at %2$s"
+msgstr "%1$s, %2$s"
+
+#: functions.php:641
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论正在等待审核。"
+
+#: functions.php:650
+msgid "Reply <span>&darr;</span>"
+msgstr "回复 <span>&darr;</span>"
+
+#: functions.php:669
+msgid ""
+"<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+msgstr ""
+"<span class=\"sep\">发表于 </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
+"a><span class=\"by-author\"> <span class=\"sep\"> 作者 </span> <span class="
+"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
+"\"author\">%7$s</a></span></span>"
+
+#: header.php:43
+msgid "Page %s"
+msgstr "第 %s 页"
+
+#: header.php:133
+msgid "Main menu"
+msgstr "主菜单"
+
+#: header.php:135
+msgid "Skip to primary content"
+msgstr "跳转至正文"
+
+#: header.php:137
+msgid "Skip to secondary content"
+msgstr "跳转至边栏"
+
+#: image.php:18
+msgid "Image navigation"
+msgstr "图片浏览"
+
+#: image.php:19
+msgid "&larr; Previous"
+msgstr "&larr; 上一幅图"
+
+#: image.php:20
+msgid "Next &rarr;"
+msgstr "下一幅图 &rarr;"
+
+#: image.php:30
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> "
+"at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> "
+"in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr ""
+"<span class=\"meta-prep meta-prep-entry-date\">发表于 </span> <span class="
+"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> "
+"<a href=\"%3$s\" title=\"到原始尺寸图片的链接\">%4$s &times; %5$s</a>，收藏于"
+"图集 <a href=\"%6$s\" title=\"返回 %7$s\" rel=\"gallery\">%7$s</a>"
+
+#: inc/theme-options.php:56 inc/theme-options.php:528
+msgid "Color Scheme"
+msgstr "色彩方案"
+
+#: inc/theme-options.php:62 inc/theme-options.php:545
+msgid "Link Color"
+msgstr "链接颜色"
+
+#: inc/theme-options.php:63
+msgid "Default Layout"
+msgstr "默认布局"
+
+#: inc/theme-options.php:95 inc/theme-options.php:96
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: inc/theme-options.php:111
+msgid ""
+"Some themes provide customization options that are grouped together on a "
+"Theme Options screen. If you change themes, options may change or disappear, "
+"as they are theme-specific. Your current theme, Twenty Eleven, provides the "
+"following Theme Options:"
+msgstr ""
+"某些主题提供自定义选项。这些选项位于“主题选项”页面。如果您改变主题，选项也可"
+"能随之改变或者消失，因为它们是随主题不同而不同的。您当前使用的主题，2011，提"
+"供了以下主题选项："
+
+#: inc/theme-options.php:113
+msgid ""
+"<strong>Color Scheme</strong>: You can choose a color palette of \"Light"
+"\" (light background with dark text) or \"Dark\" (dark background with light "
+"text) for your site."
+msgstr ""
+"<strong>色彩方案</strong>：您可以选择“浅色调”（浅色背景，黑色文字）或“暗色"
+"调”（黑色背景，浅色文字）两种颜色方案。"
+
+#: inc/theme-options.php:114
+msgid ""
+"<strong>Link Color</strong>: You can choose the color used for text links on "
+"your site. You can enter the HTML color or hex code, or you can choose "
+"visually by clicking the \"Select a Color\" button to pick from a color "
+"wheel."
+msgstr ""
+"<strong>链接颜色</strong>：您可以选择链接文本的颜色。可以直接输入 HTML 颜色代"
+"码或者 16 进制代码，也可以点击“选择颜色”按钮从调色板中选择一种颜色。"
+
+#: inc/theme-options.php:115
+msgid ""
+"<strong>Default Layout</strong>: You can choose if you want your site&#8217;"
+"s default layout to have a sidebar on the left, the right, or not at all."
+msgstr ""
+"<strong>默认布局</strong>：您可以选择使用以下几种布局方案，边栏位于左边、右"
+"边，或者不使用边栏。"
+
+#: inc/theme-options.php:117
+msgid ""
+"Remember to click \"Save Changes\" to save any changes you have made to the "
+"theme options."
+msgstr "如果您更改了主题选项，请点击“保存更改”按钮来保存设置。"
+
+#: inc/theme-options.php:119
+msgid "For more information:"
+msgstr "想了解更多信息的话请参考："
+
+#: inc/theme-options.php:120
+msgid ""
+"<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
+"target=\"_blank\">Documentation on Theme Options</a>"
+msgstr ""
+"<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
+"target=\"_blank\">主题选项文档</a>"
+
+#: inc/theme-options.php:121
+msgid ""
+"<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</"
+"a>"
+msgstr ""
+"<a href=\"http://wordpress.org/support/\" target=\"_blank\">支持论坛（英）</"
+"a> | <a href=\"http://cnzhx.net/bbs/forum-9.html\" target=\"_blank\">支持论坛"
+"（中文）</a>"
+
+#: inc/theme-options.php:128
+msgid "Overview"
+msgstr "概览"
+
+#: inc/theme-options.php:150
+msgid "Light"
+msgstr "浅色调"
+
+#: inc/theme-options.php:156
+msgid "Dark"
+msgstr "暗色调"
+
+#: inc/theme-options.php:181
+msgid "Content on left"
+msgstr "内容在左边"
+
+#: inc/theme-options.php:186
+msgid "Content on right"
+msgstr "内容在右边"
+
+#: inc/theme-options.php:191
+msgid "One-column, no sidebar"
+msgstr "一列，无边栏"
+
+#: inc/theme-options.php:298
+msgid "Select a Color"
+msgstr "选择颜色"
+
+#: inc/theme-options.php:301
+msgid "Default color: %s"
+msgstr "默认颜色： %s"
+
+#: inc/theme-options.php:337
+msgid "%s Theme Options"
+msgstr "%s 主题选项"
+
+#: inc/theme-options.php:552
+msgid "Layout"
+msgstr "布局"
+
+#: inc/widgets.php:21
+msgid ""
+"Use this widget to list your recent Aside, Status, Quote, and Link posts"
+msgstr "使用该微件来展示您的旁白、状态、引用以及链接文章。"
+
+#: inc/widgets.php:22
+msgid "Twenty Eleven Ephemera"
+msgstr "2011 主题展窗"
+
+#: inc/widgets.php:56
+msgid "Ephemera"
+msgstr "展窗"
+
+#: inc/widgets.php:95 inc/widgets.php:104
+msgid "0 <span class=\"reply\">comments &rarr;</span>"
+msgstr "0 <span class=\"reply\">条评论 &rarr;</span>"
+
+#: inc/widgets.php:95 inc/widgets.php:104
+msgid "1 <span class=\"reply\">comment &rarr;</span>"
+msgstr "1 <span class=\"reply\">条评论 &rarr;</span>"
+
+#: inc/widgets.php:95 inc/widgets.php:104
+msgid "% <span class=\"reply\">comments &rarr;</span>"
+msgstr "% <span class=\"reply\">条评论 &rarr;</span>"
+
+#: inc/widgets.php:167
+msgid "Title:"
+msgstr "标题"
+
+#: inc/widgets.php:170
+msgid "Number of posts to show:"
+msgstr "要显示的文章数目："
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "关于 <span style=\"color: #c51606;\">%s</span> 的搜索结果"
+
+#: search.php:48
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr "对不起，没有找到符合您的搜索要求。请换个类似的关键词重新搜索。"
+
+#: searchform.php:11 searchform.php:12 searchform.php:13
+msgid "Search"
+msgstr "搜索"
+
+#: showcase.php:78
+msgid "Featured Post"
+msgstr "特色文章"
+
+#: showcase.php:151
+msgid "Featuring: %s"
+msgstr "特色：%s"
+
+#: showcase.php:161
+msgid "Recent Posts"
+msgstr "近期文章"
+
+#: sidebar.php:19
+msgid "Archives"
+msgstr "归档"
+
+#: sidebar.php:26
+msgid "Meta"
+msgstr "功能"
+
+#: single.php:19
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> 上一篇"
+
+#: single.php:20
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "下一篇 <span class=\"meta-nav\">&rarr;</span>"
+
+#: tag.php:19
+msgid "Tag Archives: %s"
+msgstr "标签： %s"
+
+#. Theme Name of the plugin/theme
+msgid "Twenty Eleven"
+msgstr "2011"
+
+#. Theme URI of the plugin/theme
+msgid "http://wordpress.org/themes/twentyeleven"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"The 2011 theme for WordPress is sophisticated, lightweight, and adaptable. "
+"Make it yours with a custom menu, header image, and background -- then go "
+"further with available theme options for light or dark color scheme, custom "
+"link colors, and three layout choices. Twenty Eleven comes equipped with a "
+"Showcase page template that transforms your front page into a showcase to "
+"show off your best content, widget support galore (sidebar, three footer "
+"areas, and a Showcase page widget area), and a custom \"Ephemera\" widget to "
+"display your Aside, Link, Quote, or Status posts. Included are styles for "
+"print and for the admin editor, support for featured images (as custom "
+"header images on posts and pages and as large images on featured \"sticky\" "
+"posts), and special styles for six different post formats."
+msgstr ""
+"WordPress 2011 主题精细、轻巧且适应性强。您可以自定义菜单、顶部图片和背景，还"
+"可以通过提供的主题选项选择浅色调或暗色调、自定义链接颜色，并且有三种布局选"
+"择。2011 主题自带了一个展窗页面模板，可以将您的首页变成一个大展窗，展示您最好"
+"的内容。还有丰富的微件支持（边栏、三个页脚区域，以及展窗页面的微件），以及一"
+"个自定义“蜉蝣”微件，用于展示您的旁白、链接、引用或者状态消息。该主题还包含了"
+"打印样式、编辑器样式，支持特色图片展示（自定义文章列表和页面列表的页头图片，"
+"以及特色“置顶”文章的大号图片等），并为六种支持的不同文章类型设置了特别样式。"
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "the WordPress team"
+
+#. Template Name of the plugin/theme
+msgid "Showcase Template"
+msgstr "展窗模板"
+
+#. Template Name of the plugin/theme
+msgid "Sidebar Template"
+msgstr "边栏模板"
+
+#~ msgid "Link to %s"
+#~ msgstr "链接到 %s"
+
+#~ msgid ""
+#~ "dark, light, white, black, gray, one-column, two-columns, left-sidebar, "
+#~ "right-sidebar, fixed-width, flexible-width, custom-background, custom-"
+#~ "colors, custom-header, custom-menu, editor-style, featured-image-header, "
+#~ "featured-images, full-width-template, microformats, post-formats, rtl-"
+#~ "language-support, sticky-post, theme-options, translation-ready"
+#~ msgstr ""
+#~ "暗色调,浅色调,白色,黑色,灰色,一栏,两栏,左边栏,右边栏,固定宽度,可变宽度,自"
+#~ "定义背景,自定义颜色,自定义页头,自定义菜单,编辑器样式,特色图片页头,特色图"
+#~ "片,全宽模板,宏格式,文章格式,rtl 语言支持,置顶文章,主题选项,翻译支持"
+
+#~ msgid "<strong>1</strong> Reply"
+#~ msgstr "<strong>1</strong> 回复"
+
+#~ msgid "<strong>%</strong> Replies"
+#~ msgstr "<strong>%</strong> 回复"
+
+#~ msgid "Leave a Reply"
+#~ msgstr "我要留言"
