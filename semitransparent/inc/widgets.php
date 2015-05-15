@@ -4,7 +4,7 @@
  *
  * Handles displaying Aside, Link, Status, and Quote Posts available with Twenty Eleven.
  *
- * @link http://codex.wordpress.org/Widgets_API#Developing_Widgets
+ * @link https://codex.wordpress.org/Widgets_API#Developing_Widgets
  *
  * @package WordPress
  * @subpackage Twenty_Eleven
@@ -18,13 +18,13 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 	 * @since Twenty Eleven 1.0
 	 **/
 	function Twenty_Eleven_Ephemera_Widget() {
-		$widget_ops = array( 'classname' => 'widget_twentyeleven_ephemera', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'twentyeleven' ) );
-		$this->WP_Widget( 'widget_twentyeleven_ephemera', __( 'Twenty Eleven Ephemera', 'twentyeleven' ), $widget_ops );
-		$this->alt_option_name = 'widget_twentyeleven_ephemera';
+		$widget_ops = array( 'classname' => 'widget_SemiTransparent_ephemera', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'SemiTransparent' ) );
+		$this->WP_Widget( 'widget_SemiTransparent_ephemera', __( 'Twenty Eleven Ephemera', 'SemiTransparent' ), $widget_ops );
+		$this->alt_option_name = 'widget_SemiTransparent_ephemera';
 
-		add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array(&$this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array(&$this, 'flush_widget_cache' ) );
+		add_action( 'save_post', array( &$this, 'flush_widget_cache' ) );
+		add_action( 'deleted_post', array( &$this, 'flush_widget_cache' ) );
+		add_action( 'switch_theme', array( &$this, 'flush_widget_cache' ) );
 	}
 
 	/**
@@ -36,16 +36,16 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 	 * @param array $instance An array of settings for this widget instance.
 	 **/
 	function widget( $args, $instance ) {
-		$cache = wp_cache_get( 'widget_twentyeleven_ephemera', 'widget' );
+		$cache = wp_cache_get( 'widget_SemiTransparent_ephemera', 'widget' );
 
-		if ( !is_array( $cache ) )
+		if ( ! is_array( $cache ) )
 			$cache = array();
 
 		if ( ! isset( $args['widget_id'] ) )
 			$args['widget_id'] = null;
 
-		if ( isset( $cache[$args['widget_id']] ) ) {
-			echo $cache[$args['widget_id']];
+		if ( isset( $cache[ $args['widget_id'] ] ) ) {
+			echo $cache[ $args['widget_id'] ];
 			return;
 		}
 
@@ -53,25 +53,25 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 		extract( $args, EXTR_SKIP );
 
 		/** This filter is documented in wp-includes/default-widgets.php */
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Ephemera', 'twentyeleven' ) : $instance['title'], $instance, $this->id_base);
+		$args['title'] = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Ephemera', 'SemiTransparent' ) : $instance['title'], $instance, $this->id_base );
 
 		if ( ! isset( $instance['number'] ) )
 			$instance['number'] = '10';
 
-		if ( ! $number = absint( $instance['number'] ) )
- 			$number = 10;
+		if ( ! $args['number'] = absint( $instance['number'] ) )
+			$args['number'] = 10;
 
 		$ephemera_args = array(
-			'order' => 'DESC',
-			'posts_per_page' => $number,
-			'no_found_rows' => true,
-			'post_status' => 'publish',
-			'post__not_in' => get_option( 'sticky_posts' ),
-			'tax_query' => array(
+			'order'          => 'DESC',
+			'posts_per_page' => $args['number'],
+			'no_found_rows'  => true,
+			'post_status'    => 'publish',
+			'post__not_in'   => get_option( 'sticky_posts' ),
+			'tax_query'      => array(
 				array(
 					'taxonomy' => 'post_format',
-					'terms' => array( 'post-format-aside', 'post-format-link', 'post-format-status', 'post-format-quote' ),
-					'field' => 'slug',
+					'terms'    => array( 'post-format-aside', 'post-format-link', 'post-format-status', 'post-format-quote' ),
+					'field'    => 'slug',
 					'operator' => 'IN',
 				),
 			),
@@ -79,10 +79,10 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 		$ephemera = new WP_Query( $ephemera_args );
 
 		if ( $ephemera->have_posts() ) :
-			echo $before_widget;
-			echo $before_title;
-			echo $title; // Can set this with a widget option, or omit altogether
-			echo $after_title;
+			echo $args['before_widget'];
+			echo $args['before_title'];
+			echo $args['title'];
+			echo $args['after_title'];
 			?>
 			<ol>
 			<?php while ( $ephemera->have_posts() ) : $ephemera->the_post(); ?>
@@ -92,16 +92,16 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 				<li class="widget-entry-title">
 					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a>
 					<span class="comments-link">
-						<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'twentyeleven' ), __( '1 <span class="reply">comment &rarr;</span>', 'twentyeleven' ), __( '% <span class="reply">comments &rarr;</span>', 'twentyeleven' ) ); ?>
+						<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'SemiTransparent' ), __( '1 <span class="reply">comment &rarr;</span>', 'SemiTransparent' ), __( '% <span class="reply">comments &rarr;</span>', 'SemiTransparent' ) ); ?>
 					</span>
 				</li>
 
 				<?php else : ?>
 
 				<li class="widget-entry-title">
-					<a href="<?php echo esc_url( twentyeleven_get_first_url() ); ?>" rel="bookmark"><?php the_title(); ?>&nbsp;<span>&rarr;</span></a>
+					<a href="<?php echo esc_url( SemiTransparent_get_first_url() ); ?>" rel="bookmark"><?php the_title(); ?>&nbsp;<span>&rarr;</span></a>
 					<span class="comments-link">
-						<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'twentyeleven' ), __( '1 <span class="reply">comment &rarr;</span>', 'twentyeleven' ), __( '% <span class="reply">comments &rarr;</span>', 'twentyeleven' ) ); ?>
+						<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'SemiTransparent' ), __( '1 <span class="reply">comment &rarr;</span>', 'SemiTransparent' ), __( '% <span class="reply">comments &rarr;</span>', 'SemiTransparent' ) ); ?>
 					</span>
 				</li>
 
@@ -111,7 +111,7 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 			</ol>
 			<?php
 
-			echo $after_widget;
+			echo $args['after_widget'];
 
 			// Reset the post globals as this query will have stomped on it
 			wp_reset_postdata();
@@ -119,8 +119,8 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 		// end check for ephemeral posts
 		endif;
 
-		$cache[$args['widget_id']] = ob_get_flush();
-		wp_cache_set( 'widget_twentyeleven_ephemera', $cache, 'widget' );
+		$cache[ $args['widget_id'] ] = ob_get_flush();
+		wp_cache_set( 'widget_SemiTransparent_ephemera', $cache, 'widget' );
 	}
 
 	/**
@@ -138,8 +138,8 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset( $alloptions['widget_twentyeleven_ephemera'] ) )
-			delete_option( 'widget_twentyeleven_ephemera' );
+		if ( isset( $alloptions['widget_SemiTransparent_ephemera'] ) )
+			delete_option( 'widget_SemiTransparent_ephemera' );
 
 		return $instance;
 	}
@@ -150,7 +150,7 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 	 * @since Twenty Eleven 1.0
 	 */
 	function flush_widget_cache() {
-		wp_cache_delete( 'widget_twentyeleven_ephemera', 'widget' );
+		wp_cache_delete( 'widget_SemiTransparent_ephemera', 'widget' );
 	}
 
 	/**
@@ -164,10 +164,10 @@ class Twenty_Eleven_Ephemera_Widget extends WP_Widget {
 		$title = isset( $instance['title']) ? esc_attr( $instance['title'] ) : '';
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 10;
 ?>
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'twentyeleven' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'SemiTransparent' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'twentyeleven' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'SemiTransparent' ); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
 		<?php
 	}

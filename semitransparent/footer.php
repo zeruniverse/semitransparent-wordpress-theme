@@ -23,11 +23,13 @@
 					get_sidebar( 'footer' );
 			?>
 
-			<div id="site-generator" style="font-size:13px;color:#222;">
-			&copy; 2014 Jeffery &nbsp;&nbsp;&nbsp;基于WordPress-TwentyEleven
+			<div id="site-generator">
+				<?php do_action( 'SemiTransparent_credits' ); ?>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'SemiTransparent' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'SemiTransparent' ); ?>"><?php printf( __( 'Proudly powered by %s', 'SemiTransparent' ), 'WordPress' ); ?></a>
 			</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
 <?php wp_footer(); ?>
 
 </body>

@@ -15,9 +15,9 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<nav id="nav-single">
-					<h3 class="assistive-text"><?php _e( 'Image navigation', 'twentyeleven' ); ?></h3>
-					<span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' , 'twentyeleven' ) ); ?></span>
-					<span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' , 'twentyeleven' ) ); ?></span>
+					<h3 class="assistive-text"><?php _e( 'Image navigation', 'SemiTransparent' ); ?></h3>
+					<span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' , 'SemiTransparent' ) ); ?></span>
+					<span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' , 'SemiTransparent' ) ); ?></span>
 				</nav><!-- #nav-single -->
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,7 +27,7 @@ get_header(); ?>
 							<div class="entry-meta">
 								<?php
 									$metadata = wp_get_attachment_metadata();
-									printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'twentyeleven' ),
+									printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'SemiTransparent' ),
 										esc_attr( get_the_time() ),
 										get_the_date(),
 										esc_url( wp_get_attachment_url() ),
@@ -38,7 +38,7 @@ get_header(); ?>
 										get_the_title( $post->post_parent )
 									);
 								?>
-								<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php edit_post_link( __( 'Edit', 'SemiTransparent' ), '<span class="edit-link">', '</span>' ); ?>
 							</div><!-- .entry-meta -->
 
 						</header><!-- .entry-header -->
@@ -57,15 +57,16 @@ get_header(); ?>
 		if ( $attachment->ID == $post->ID )
 			break;
 	}
-	$k++;
+
 	// If there is more than 1 attachment in a gallery
 	if ( count( $attachments ) > 1 ) {
+		$k++;
 		if ( isset( $attachments[ $k ] ) )
 			// get the URL of the next image attachment
 			$next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
 		else
 			// or get the URL of the first image attachment
-			$next_attachment_url = get_attachment_link( $attachments[ 0 ]->ID );
+			$next_attachment_url = get_attachment_link( $attachments[0]->ID );
 	} else {
 		// or, if there's only 1 image, get the URL of the image
 		$next_attachment_url = wp_get_attachment_url();
@@ -79,7 +80,7 @@ get_header(); ?>
 									 *
 									 * @param int The height and width attachment size dimensions in pixels. Default 848.
 									 */
-									$attachment_size = apply_filters( 'twentyeleven_attachment_size', 848 );
+									$attachment_size = apply_filters( 'SemiTransparent_attachment_size', 848 );
 									echo wp_get_attachment_image( $post->ID, array( $attachment_size, 1024 ) ); // filterable image width with 1024px limit for image height.
 									?></a>
 
@@ -94,7 +95,7 @@ get_header(); ?>
 
 							<div class="entry-description">
 								<?php the_content(); ?>
-								<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
+								<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'SemiTransparent' ) . '</span>', 'after' => '</div>' ) ); ?>
 							</div><!-- .entry-description -->
 
 						</div><!-- .entry-content -->

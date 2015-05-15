@@ -1,16 +1,19 @@
 <?php
-/**
+/*SemiTransparent
+ *by Jeffery
+ **
+ *ORIGINAL HEADER
  * Twenty Eleven functions and definitions
  *
  * Sets up the theme and provides some helper functions. Some helper functions
  * are used in the theme as custom template tags. Others are attached to action and
  * filter hooks in WordPress to change core functionality.
  *
- * The first function, twentyeleven_setup(), sets up the theme by registering support
+ * The first function, SemiTransparent_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
- * When using a child theme (see http://codex.wordpress.org/Theme_Development and
- * http://codex.wordpress.org/Child_Themes), you can override certain functions
+ * When using a child theme (see https://codex.wordpress.org/Theme_Development and
+ * https://codex.wordpress.org/Child_Themes), you can override certain functions
  * (those wrapped in a function_exists() call) by defining them first in your child theme's
  * functions.php file. The child theme's functions.php file is included before the parent
  * theme's file, so the child theme functions would be used.
@@ -26,16 +29,11 @@
  * add_action( 'after_setup_theme', 'my_child_theme_setup' );
  * function my_child_theme_setup() {
  *     // We are providing our own filter for excerpt_length (or using the unfiltered value)
- *     remove_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
+ *     remove_filter( 'excerpt_length', 'SemiTransparent_excerpt_length' );
  *     ...
  * }
  * </code>
  *
- * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
  */
 
 // Set the content width based on the theme's design and stylesheet.
@@ -43,11 +41,11 @@ if ( ! isset( $content_width ) )
 	$content_width = 584;
 
 /*
- * Tell WordPress to run twentyeleven_setup() when the 'after_setup_theme' hook is run.
+ * Tell WordPress to run SemiTransparent_setup() when the 'after_setup_theme' hook is run.
  */
-add_action( 'after_setup_theme', 'twentyeleven_setup' );
+add_action( 'after_setup_theme', 'SemiTransparent_setup' );
 
-if ( ! function_exists( 'twentyeleven_setup' ) ):
+if ( ! function_exists( 'SemiTransparent_setup' ) ):
 /**
  * Set up theme defaults and registers support for various WordPress features.
  *
@@ -55,7 +53,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override twentyeleven_setup() in a child theme, add your own twentyeleven_setup to your child theme's
+ * To override SemiTransparent_setup() in a child theme, add your own SemiTransparent_setup to your child theme's
  * functions.php file.
  *
  * @uses load_theme_textdomain()    For translation/localization support.
@@ -68,7 +66,7 @@ if ( ! function_exists( 'twentyeleven_setup' ) ):
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_setup() {
+function SemiTransparent_setup() {
 
 	/*
 	 * Make Twenty Eleven available for translation.
@@ -77,7 +75,7 @@ function twentyeleven_setup() {
 	 * a find and replace to change 'twentyeleven' to the name
 	 * of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'twentyeleven', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'SemiTransparent', get_template_directory() . '/languages' );
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -92,12 +90,12 @@ function twentyeleven_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'twentyeleven' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'SemiTransparent' ) );
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
-	$theme_options = twentyeleven_get_theme_options();
+	$theme_options = SemiTransparent_get_theme_options();
 	if ( 'dark' == $theme_options['color_scheme'] )
 		$default_background_color = '1d1d1d';
 	else
@@ -127,7 +125,7 @@ function twentyeleven_setup() {
 		 *
 		 * @param int The default header image width in pixels. Default 1000.
 		 */
-		'width' => apply_filters( 'twentyeleven_header_image_width', 1000 ),
+		'width' => apply_filters( 'SemiTransparent_header_image_width', 1000 ),
 		/**
 		 * Filter the Twenty Eleven default header image height.
 		 *
@@ -135,17 +133,17 @@ function twentyeleven_setup() {
 		 *
 		 * @param int The default header image height in pixels. Default 288.
 		 */
-		'height' => apply_filters( 'twentyeleven_header_image_height', 288 ),
+		'height' => apply_filters( 'SemiTransparent_header_image_height', 288 ),
 		// Support flexible heights.
 		'flex-height' => true,
 		// Random image rotation by default.
 		'random-default' => true,
 		// Callback for styling the header.
-		'wp-head-callback' => 'twentyeleven_header_style',
+		'wp-head-callback' => 'SemiTransparent_header_style',
 		// Callback for styling the header preview in the admin.
-		'admin-head-callback' => 'twentyeleven_admin_header_style',
+		'admin-head-callback' => 'SemiTransparent_admin_header_style',
 		// Callback used to display the header preview in the admin.
-		'admin-preview-callback' => 'twentyeleven_admin_header_image',
+		'admin-preview-callback' => 'SemiTransparent_admin_header_image',
 	);
 
 	add_theme_support( 'custom-header', $custom_header_support );
@@ -157,7 +155,6 @@ function twentyeleven_setup() {
 		define( 'HEADER_IMAGE_WIDTH', $custom_header_support['width'] );
 		define( 'HEADER_IMAGE_HEIGHT', $custom_header_support['height'] );
 		add_custom_image_header( $custom_header_support['wp-head-callback'], $custom_header_support['admin-head-callback'], $custom_header_support['admin-preview-callback'] );
-		add_custom_background();
 	}
 
 	/*
@@ -181,61 +178,61 @@ function twentyeleven_setup() {
 			'url' => '%s/images/headers/wheel.jpg',
 			'thumbnail_url' => '%s/images/headers/wheel-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Wheel', 'twentyeleven' )
+			'description' => __( 'Wheel', 'SemiTransparent' )
 		),
 		'shore' => array(
 			'url' => '%s/images/headers/shore.jpg',
 			'thumbnail_url' => '%s/images/headers/shore-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Shore', 'twentyeleven' )
+			'description' => __( 'Shore', 'SemiTransparent' )
 		),
 		'trolley' => array(
 			'url' => '%s/images/headers/trolley.jpg',
 			'thumbnail_url' => '%s/images/headers/trolley-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Trolley', 'twentyeleven' )
+			'description' => __( 'Trolley', 'SemiTransparent' )
 		),
 		'pine-cone' => array(
 			'url' => '%s/images/headers/pine-cone.jpg',
 			'thumbnail_url' => '%s/images/headers/pine-cone-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Pine Cone', 'twentyeleven' )
+			'description' => __( 'Pine Cone', 'SemiTransparent' )
 		),
 		'chessboard' => array(
 			'url' => '%s/images/headers/chessboard.jpg',
 			'thumbnail_url' => '%s/images/headers/chessboard-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Chessboard', 'twentyeleven' )
+			'description' => __( 'Chessboard', 'SemiTransparent' )
 		),
 		'lanterns' => array(
 			'url' => '%s/images/headers/lanterns.jpg',
 			'thumbnail_url' => '%s/images/headers/lanterns-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Lanterns', 'twentyeleven' )
+			'description' => __( 'Lanterns', 'SemiTransparent' )
 		),
 		'willow' => array(
 			'url' => '%s/images/headers/willow.jpg',
 			'thumbnail_url' => '%s/images/headers/willow-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Willow', 'twentyeleven' )
+			'description' => __( 'Willow', 'SemiTransparent' )
 		),
 		'hanoi' => array(
 			'url' => '%s/images/headers/hanoi.jpg',
 			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'twentyeleven' )
+			'description' => __( 'Hanoi Plant', 'SemiTransparent' )
 		)
 	) );
 }
-endif; // twentyeleven_setup
+endif; // SemiTransparent_setup
 
-if ( ! function_exists( 'twentyeleven_header_style' ) ) :
+if ( ! function_exists( 'SemiTransparent_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_header_style() {
+function SemiTransparent_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
@@ -244,14 +241,14 @@ function twentyeleven_header_style() {
 
 	// If we get this far, we have custom styles. Let's do this.
 	?>
-	<style type="text/css" id="twentyeleven-header-css">
+	<style type="text/css" id="SemiTransparent-header-css">
 	<?php
 		// Has the text been hidden?
 		if ( 'blank' == $text_color ) :
 	?>
 		#site-title,
 		#site-description {
-			position: absolute !important;
+			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
@@ -261,25 +258,25 @@ function twentyeleven_header_style() {
 	?>
 		#site-title a,
 		#site-description {
-			color: #<?php echo $text_color; ?> !important;
+			color: #<?php echo $text_color; ?>;
 		}
 	<?php endif; ?>
 	</style>
 	<?php
 }
-endif; // twentyeleven_header_style
+endif; // SemiTransparent_header_style
 
-if ( ! function_exists( 'twentyeleven_admin_header_style' ) ) :
+if ( ! function_exists( 'SemiTransparent_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
+ * Referenced via add_theme_support('custom-header') in SemiTransparent_setup().
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_admin_header_style() {
+function SemiTransparent_admin_header_style() {
 ?>
-	<style type="text/css" id="twentyeleven-admin-header-css">
+	<style type="text/css" id="SemiTransparent-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
 	}
@@ -317,34 +314,34 @@ function twentyeleven_admin_header_style() {
 	</style>
 <?php
 }
-endif; // twentyeleven_admin_header_style
+endif; // SemiTransparent_admin_header_style
 
-if ( ! function_exists( 'twentyeleven_admin_header_image' ) ) :
+if ( ! function_exists( 'SemiTransparent_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_theme_support('custom-header') in twentyeleven_setup().
+ * Referenced via add_theme_support('custom-header') in SemiTransparent_setup().
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_admin_header_image() { ?>
+function SemiTransparent_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		$color = get_header_textcolor();
 		$image = get_header_image();
-		if ( $color && $color != 'blank' )
-			$style = ' style="color:#' . $color . '"';
-		else
-			$style = ' style="display:none"';
+		$style = 'display: none;';
+		if ( $color && $color != 'blank' ) {
+			$style = 'color: #' . $color . ';';
+		}
 		?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="desc" class="displaying-header-text"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( $image ) : ?>
+		<h1 class="displaying-header-text"><a id="name" style="<?php echo esc_attr( $style ); ?>" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc" class="displaying-header-text" style="<?php echo esc_attr( $style ); ?>"><?php bloginfo( 'description' ); ?></div>
+  		<?php if ( $image ) : ?>
 			<img src="<?php echo esc_url( $image ); ?>" alt="" />
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // twentyeleven_admin_header_image
+endif; // SemiTransparent_admin_header_image
 
 /**
  * Set the post excerpt length to 40 words.
@@ -358,12 +355,12 @@ endif; // twentyeleven_admin_header_image
  * @param int $length The number of excerpt characters.
  * @return int The filtered number of characters.
  */
-function twentyeleven_excerpt_length( $length ) {
+function SemiTransparent_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
+add_filter( 'excerpt_length', 'SemiTransparent_excerpt_length' );
 
-if ( ! function_exists( 'twentyeleven_continue_reading_link' ) ) :
+if ( ! function_exists( 'SemiTransparent_continue_reading_link' ) ) :
 /**
  * Return a "Continue Reading" link for excerpts
  *
@@ -371,10 +368,10 @@ if ( ! function_exists( 'twentyeleven_continue_reading_link' ) ) :
  *
  * @return string The "Continue Reading" HTML link.
  */
-function twentyeleven_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
+function SemiTransparent_continue_reading_link() {
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'SemiTransparent' ) . '</a>';
 }
-endif; // twentyeleven_continue_reading_link
+endif; // SemiTransparent_continue_reading_link
 
 /**
  * Replace "[...]" in the Read More link with an ellipsis.
@@ -389,10 +386,13 @@ endif; // twentyeleven_continue_reading_link
  * @param string $more The Read More text.
  * @return The filtered Read More text.
  */
-function twentyeleven_auto_excerpt_more( $more ) {
-	return ' &hellip;' . twentyeleven_continue_reading_link();
+function SemiTransparent_auto_excerpt_more( $more ) {
+	if ( ! is_admin() ) {
+		return ' &hellip;' . SemiTransparent_continue_reading_link();
+	}
+	return $more;
 }
-add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'SemiTransparent_auto_excerpt_more' );
 
 /**
  * Add a pretty "Continue Reading" link to custom post excerpts.
@@ -405,13 +405,13 @@ add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
  * @param string $output The "Continue Reading" link.
  * @return string The filtered "Continue Reading" link.
  */
-function twentyeleven_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= twentyeleven_continue_reading_link();
+function SemiTransparent_custom_excerpt_more( $output ) {
+	if ( has_excerpt() && ! is_attachment() && ! is_admin() ) {
+		$output .= SemiTransparent_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'SemiTransparent_custom_excerpt_more' );
 
 /**
  * Show a home link for the wp_nav_menu() fallback, wp_page_menu().
@@ -421,12 +421,12 @@ add_filter( 'get_the_excerpt', 'twentyeleven_custom_excerpt_more' );
  * @param array $args The page menu arguments. @see wp_page_menu()
  * @return array The filtered page menu arguments.
  */
-function twentyeleven_page_menu_args( $args ) {
+function SemiTransparent_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'twentyeleven_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'SemiTransparent_page_menu_args' );
 
 /**
  * Register sidebars and widgetized areas.
@@ -435,62 +435,62 @@ add_filter( 'wp_page_menu_args', 'twentyeleven_page_menu_args' );
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_widgets_init() {
+function SemiTransparent_widgets_init() {
 
 	register_widget( 'Twenty_Eleven_Ephemera_Widget' );
 
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'twentyeleven' ),
+		'name' => __( 'Main Sidebar', 'SemiTransparent' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Showcase Sidebar', 'twentyeleven' ),
+		'name' => __( 'Showcase Sidebar', 'SemiTransparent' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'The sidebar for the optional Showcase Template', 'twentyeleven' ),
+		'description' => __( 'The sidebar for the optional Showcase Template', 'SemiTransparent' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'twentyeleven' ),
+		'name' => __( 'Footer Area One', 'SemiTransparent' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
+		'description' => __( 'An optional widget area for your site footer', 'SemiTransparent' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'twentyeleven' ),
+		'name' => __( 'Footer Area Two', 'SemiTransparent' ),
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
+		'description' => __( 'An optional widget area for your site footer', 'SemiTransparent' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'twentyeleven' ),
+		'name' => __( 'Footer Area Three', 'SemiTransparent' ),
 		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'twentyeleven' ),
+		'description' => __( 'An optional widget area for your site footer', 'SemiTransparent' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'twentyeleven_widgets_init' );
+add_action( 'widgets_init', 'SemiTransparent_widgets_init' );
 
-if ( ! function_exists( 'twentyeleven_content_nav' ) ) :
+if ( ! function_exists( 'SemiTransparent_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable.
  *
@@ -498,18 +498,18 @@ if ( ! function_exists( 'twentyeleven_content_nav' ) ) :
  *
  * @param string $html_id The HTML id attribute.
  */
-function twentyeleven_content_nav( $html_id ) {
+function SemiTransparent_content_nav( $html_id ) {
 	global $wp_query;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo esc_attr( $html_id ); ?>">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentyeleven' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></div>
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'SemiTransparent' ); ?></h3>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'SemiTransparent' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'SemiTransparent' ) ); ?></div>
 		</nav><!-- #nav-above -->
 	<?php endif;
 }
-endif; // twentyeleven_content_nav
+endif; // SemiTransparent_content_nav
 
 /**
  * Return the first link from the post content. If none found, the
@@ -521,12 +521,12 @@ endif; // twentyeleven_content_nav
  *
  * @return string The first link.
  */
-function twentyeleven_get_first_url() {
+function SemiTransparent_get_first_url() {
 	$content = get_the_content();
 	$has_url = function_exists( 'get_url_in_content' ) ? get_url_in_content( $content ) : false;
 
 	if ( ! $has_url )
-		$has_url = twentyeleven_url_grabber();
+		$has_url = SemiTransparent_url_grabber();
 
 	/** This filter is documented in wp-includes/link-template.php */
 	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
@@ -539,7 +539,7 @@ function twentyeleven_get_first_url() {
  *
  * @return string|bool URL or false when no link is present.
  */
-function twentyeleven_url_grabber() {
+function SemiTransparent_url_grabber() {
 	if ( ! preg_match( '/<a\s[^>]*?href=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
 		return false;
 
@@ -551,7 +551,7 @@ function twentyeleven_url_grabber() {
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_footer_sidebar_class() {
+function SemiTransparent_footer_sidebar_class() {
 	$count = 0;
 
 	if ( is_active_sidebar( 'sidebar-3' ) )
@@ -578,15 +578,15 @@ function twentyeleven_footer_sidebar_class() {
 	}
 
 	if ( $class )
-		echo 'class="' . $class . '"';
+		echo 'class="' . esc_attr( $class ) . '"';
 }
 
-if ( ! function_exists( 'twentyeleven_comment' ) ) :
+if ( ! function_exists( 'SemiTransparent_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyeleven_comment(), and that function will be used instead.
+ * simply create your own SemiTransparent_comment(), and that function will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
@@ -596,14 +596,14 @@ if ( ! function_exists( 'twentyeleven_comment' ) ) :
  * @param array  $args    An array of comment arguments. @see get_comment_reply_link()
  * @param int    $depth   The depth of the comment.
  */
-function twentyeleven_comment( $comment, $args, $depth ) {
+function SemiTransparent_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyeleven' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'SemiTransparent' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'SemiTransparent' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -620,22 +620,22 @@ function twentyeleven_comment( $comment, $args, $depth ) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'twentyeleven' ),
+						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'SemiTransparent' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 							sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'twentyeleven' ), get_comment_date(), get_comment_time() )
+								sprintf( __( '%1$s at %2$s', 'SemiTransparent' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'SemiTransparent' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyeleven' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'SemiTransparent' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -644,7 +644,7 @@ function twentyeleven_comment( $comment, $args, $depth ) {
 			<div class="comment-content"><?php comment_text(); ?></div>
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'twentyeleven' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'SemiTransparent' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 
@@ -652,24 +652,24 @@ function twentyeleven_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for twentyeleven_comment()
+endif; // ends check for SemiTransparent_comment()
 
-if ( ! function_exists( 'twentyeleven_posted_on' ) ) :
+if ( ! function_exists( 'SemiTransparent_posted_on' ) ) :
 /**
  * Print HTML with meta information for the current post-date/time and author.
  *
- * Create your own twentyeleven_posted_on to override in a child theme
+ * Create your own SemiTransparent_posted_on to override in a child theme
  *
  * @since Twenty Eleven 1.0
  */
-function twentyeleven_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'twentyeleven' ),
+function SemiTransparent_posted_on() {
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'SemiTransparent' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'twentyeleven' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'SemiTransparent' ), get_the_author() ) ),
 		get_the_author()
 	);
 }
@@ -686,7 +686,7 @@ endif;
  * @param array $classes Existing body classes.
  * @return array The filtered array of body classes.
  */
-function twentyeleven_body_classes( $classes ) {
+function SemiTransparent_body_classes( $classes ) {
 
 	if ( function_exists( 'is_multi_author' ) && ! is_multi_author() )
 		$classes[] = 'single-author';
@@ -696,7 +696,7 @@ function twentyeleven_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'twentyeleven_body_classes' );
+add_filter( 'body_class', 'SemiTransparent_body_classes' );
 
 /**
  * Retrieve the IDs for images in a gallery.
@@ -708,13 +708,13 @@ add_filter( 'body_class', 'twentyeleven_body_classes' );
  *
  * @return array List of image IDs from the post gallery.
  */
-function twentyeleven_get_gallery_images() {
+function SemiTransparent_get_gallery_images() {
 	$images = array();
 
 	if ( function_exists( 'get_post_galleries' ) ) {
 		$galleries = get_post_galleries( get_the_ID(), false );
 		if ( isset( $galleries[0]['ids'] ) )
-		 	$images = explode( ',', $galleries[0]['ids'] );
+			$images = explode( ',', $galleries[0]['ids'] );
 	} else {
 		$pattern = get_shortcode_regex();
 		preg_match( "/$pattern/s", get_the_content(), $match );

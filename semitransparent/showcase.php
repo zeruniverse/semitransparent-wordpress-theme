@@ -16,7 +16,7 @@
  */
 
 // Enqueue showcase script for the slider
-wp_enqueue_script( 'twentyeleven-showcase', get_template_directory_uri() . '/js/showcase.js', array( 'jquery' ), '2011-04-28' );
+wp_enqueue_script( 'SemiTransparent-showcase', get_template_directory_uri() . '/js/showcase.js', array( 'jquery' ), '2011-04-28' );
 
 get_header(); ?>
 
@@ -75,7 +75,7 @@ get_header(); ?>
 				?>
 
 				<div class="featured-posts">
-					<h1 class="showcase-heading"><?php _e( 'Featured Post', 'twentyeleven' ); ?></h1>
+					<h1 class="showcase-heading"><?php _e( 'Featured Post', 'SemiTransparent' ); ?></h1>
 
 				<?php
 					// Let's roll.
@@ -105,7 +105,7 @@ get_header(); ?>
 					}
 					?>
 
-					<section class="featured-post <?php echo $feature_class; ?>" id="featured-post-<?php echo $counter_slider; ?>">
+					<section class="featured-post <?php echo esc_attr( $feature_class ); ?>" id="featured-post-<?php echo esc_attr( $counter_slider ); ?>">
 
 						<?php
 							/*
@@ -118,7 +118,7 @@ get_header(); ?>
 								else
 									$thumbnail_size = 'small-feature';
 								?>
-								<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( $thumbnail_size ); ?></a>
+								<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'SemiTransparent' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( $thumbnail_size ); ?></a>
 								<?php
 							}
 						?>
@@ -135,20 +135,20 @@ get_header(); ?>
 					<?php
 
 						// Reset the counter so that we end up with matching elements
-				    	$counter_slider = 0;
+						$counter_slider = 0;
 
 						// Begin from zero
-				    	rewind_posts();
+						rewind_posts();
 
 						// Let's roll again.
-				    	while ( $featured->have_posts() ) : $featured->the_post();
-				    		$counter_slider++;
+						while ( $featured->have_posts() ) : $featured->the_post();
+							$counter_slider++;
 							if ( 1 == $counter_slider )
-								$class = 'class="active"';
+								$class = ' class="active"';
 							else
 								$class = '';
-				    	?>
-						<li><a href="#featured-post-<?php echo $counter_slider; ?>" title="<?php echo esc_attr( sprintf( __( 'Featuring: %s', 'twentyeleven' ), the_title_attribute( 'echo=0' ) ) ); ?>" <?php echo $class; ?>></a></li>
+						?>
+						<li><a href="#featured-post-<?php echo esc_attr( $counter_slider ); ?>" title="<?php echo esc_attr( sprintf( __( 'Featuring: %s', 'SemiTransparent' ), the_title_attribute( 'echo=0' ) ) ); ?>"<?php echo $class; ?>></a></li>
 					<?php endwhile;	?>
 					</ul>
 				</nav>
@@ -158,7 +158,7 @@ get_header(); ?>
 				<?php endif; // End check for sticky posts. ?>
 
 				<section class="recent-posts">
-					<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'twentyeleven' ); ?></h1>
+					<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'SemiTransparent' ); ?></h1>
 
 					<?php
 
@@ -199,7 +199,7 @@ get_header(); ?>
 						<li class="entry-title">
 							<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 							<span class="comments-link">
-								<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'twentyeleven' ) . '</span>', __( '<b>1</b> Reply', 'twentyeleven' ), __( '<b>%</b> Replies', 'twentyeleven' ) ); ?>
+								<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'SemiTransparent' ) . '</span>', __( '<b>1</b> Reply', 'SemiTransparent' ), __( '<b>%</b> Replies', 'SemiTransparent' ) ); ?>
 							</span>
 						</li>
 
