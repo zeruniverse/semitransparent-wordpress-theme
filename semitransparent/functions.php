@@ -174,53 +174,53 @@ function SemiTransparent_setup() {
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
-		'wheel' => array(
-			'url' => '%s/images/headers/wheel.jpg',
-			'thumbnail_url' => '%s/images/headers/wheel-thumbnail.jpg',
+		'bridge' => array(
+			'url' => '%s/images/headers/bridge.jpg',
+			'thumbnail_url' => '%s/images/headers/bridge-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Wheel', 'SemiTransparent' )
+			'description' => __( 'Bridge', 'SemiTransparent' )
 		),
-		'shore' => array(
-			'url' => '%s/images/headers/shore.jpg',
-			'thumbnail_url' => '%s/images/headers/shore-thumbnail.jpg',
+		'green' => array(
+			'url' => '%s/images/headers/green.jpg',
+			'thumbnail_url' => '%s/images/headers/green-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Shore', 'SemiTransparent' )
+			'description' => __( 'Green', 'SemiTransparent' )
 		),
-		'trolley' => array(
-			'url' => '%s/images/headers/trolley.jpg',
-			'thumbnail_url' => '%s/images/headers/trolley-thumbnail.jpg',
+		'moon' => array(
+			'url' => '%s/images/headers/moon.jpg',
+			'thumbnail_url' => '%s/images/headers/moon-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Trolley', 'SemiTransparent' )
+			'description' => __( 'Moon', 'SemiTransparent' )
 		),
-		'pine-cone' => array(
-			'url' => '%s/images/headers/pine-cone.jpg',
-			'thumbnail_url' => '%s/images/headers/pine-cone-thumbnail.jpg',
+		'purple' => array(
+			'url' => '%s/images/headers/purple.jpg',
+			'thumbnail_url' => '%s/images/headers/purple-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Pine Cone', 'SemiTransparent' )
+			'description' => __( 'Purple', 'SemiTransparent' )
 		),
-		'chessboard' => array(
-			'url' => '%s/images/headers/chessboard.jpg',
-			'thumbnail_url' => '%s/images/headers/chessboard-thumbnail.jpg',
+		'skyblue' => array(
+			'url' => '%s/images/headers/skyblue.jpg',
+			'thumbnail_url' => '%s/images/headers/skyblue-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Chessboard', 'SemiTransparent' )
+			'description' => __( 'Skyblue', 'SemiTransparent' )
 		),
-		'lanterns' => array(
-			'url' => '%s/images/headers/lanterns.jpg',
-			'thumbnail_url' => '%s/images/headers/lanterns-thumbnail.jpg',
+		'sparkle' => array(
+			'url' => '%s/images/headers/sparkle.jpg',
+			'thumbnail_url' => '%s/images/headers/sparkle-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Lanterns', 'SemiTransparent' )
+			'description' => __( 'Sparkle', 'SemiTransparent' )
 		),
-		'willow' => array(
-			'url' => '%s/images/headers/willow.jpg',
-			'thumbnail_url' => '%s/images/headers/willow-thumbnail.jpg',
+		'sunflower' => array(
+			'url' => '%s/images/headers/sunflower.jpg',
+			'thumbnail_url' => '%s/images/headers/sunflower-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Willow', 'SemiTransparent' )
+			'description' => __( 'Sunflower', 'SemiTransparent' )
 		),
-		'hanoi' => array(
-			'url' => '%s/images/headers/hanoi.jpg',
-			'thumbnail_url' => '%s/images/headers/hanoi-thumbnail.jpg',
+		'universe' => array(
+			'url' => '%s/images/headers/universe.jpg',
+			'thumbnail_url' => '%s/images/headers/universe-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Hanoi Plant', 'SemiTransparent' )
+			'description' => __( 'Universe', 'SemiTransparent' )
 		)
 	) );
 }
