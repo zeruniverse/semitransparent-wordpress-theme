@@ -11,7 +11,7 @@ Please put the theme folder [semitransparent] under your wordpress theme folder!
 
 The theme folder is [semitransparent] and [old_css_and_header] in this folder is the original file of the theme 2011.  
   
-[下载主题包](https://github.com/zeruniverse/semitransparent-wordpress-theme/releases/tag/v1.5)  
+[Download Theme Package (下载主题包)](https://github.com/zeruniverse/semitransparent-wordpress-theme/releases/tag/v1.5)  
 LICENSE: GNU GPL 2.0  
 
 #Theme Examples:
